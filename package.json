@@ -1,0 +1,13 @@
+{
+  "name": "sunday-ui-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "build:cli": "pnpm --filter @sunday-ui/cli build",
+    "dev:docs": "pnpm --filter @sunday-ui/docs dev",
+    "build:docs": "pnpm --filter @sunday-ui/docs build"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
