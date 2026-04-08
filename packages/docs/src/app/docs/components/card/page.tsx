@@ -48,14 +48,12 @@ export default function CardPage() {
       {/* Installation */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Installation</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock code={meta.install} language="bash" />
       </section>
 
       {/* Usage */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Usage</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`import {
   Card,
@@ -126,7 +124,6 @@ export default function CardPage() {
             </CardFooter>
           </Card>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Card className="w-full max-w-md">
   <CardHeader>

@@ -16,7 +16,7 @@ export function useTypeahead({
   enabled = true,
 }: UseTypeaheadParams) {
   const searchRef = React.useRef("");
-  const timerRef = React.useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const onMatchRef = React.useRef(onMatch);
   onMatchRef.current = onMatch;
 

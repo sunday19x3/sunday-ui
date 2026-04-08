@@ -56,7 +56,6 @@ export default function GettingStartedPage() {
           Run the init command to set up your project. It will create a config file, copy the utility
           functions, and inject the theme CSS variables into your global stylesheet.
         </p>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock code="npx sunday-ui init" language="bash" />
         <p className="text-sm text-muted-foreground">
           The CLI will ask you where your global CSS file, components, lib, and hooks directories are.
@@ -68,7 +67,6 @@ export default function GettingStartedPage() {
         <h2 id="font" className="text-xl font-semibold text-foreground">
           Install Poppins Font
         </h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`pnpm add @fontsource/poppins`}
           language="bash"
@@ -76,7 +74,6 @@ export default function GettingStartedPage() {
         <p className="text-muted-foreground">
           Then import the font weights in your root layout:
         </p>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
@@ -91,13 +88,11 @@ import "@fontsource/poppins/700.css";`}
         <h2 id="add-component" className="text-xl font-semibold text-foreground">
           Add Your First Component
         </h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock code="npx sunday-ui add button" language="bash" />
         <p className="text-muted-foreground">
           This copies the Button component and its dependencies (utils, slot, compose-refs) into your project.
           Now use it:
         </p>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`import { Button } from "@/components/ui/button"
 
@@ -116,7 +111,6 @@ export default function Page() {
         <p className="text-muted-foreground">
           sunday-ui components need these packages installed in your project:
         </p>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code="pnpm add clsx tailwind-merge class-variance-authority"
           language="bash"

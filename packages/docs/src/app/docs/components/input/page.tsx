@@ -28,14 +28,12 @@ export default function InputPage() {
       {/* Installation */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Installation</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock code={meta.install} language="bash" />
       </section>
 
       {/* Usage */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Usage</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`import { Input } from "@/components/ui/input"\n\n<Input label="Email" placeholder="you@example.com" />`}
           language="tsx"
@@ -50,7 +48,6 @@ export default function InputPage() {
             <Input label="Username" placeholder="Enter your username" />
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Input label="Username" placeholder="Enter your username" />`}
           language="tsx"
@@ -70,7 +67,6 @@ export default function InputPage() {
             />
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Input
   label="Password"
@@ -94,7 +90,6 @@ export default function InputPage() {
             />
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Input
   label="Email"
@@ -117,7 +112,6 @@ export default function InputPage() {
             />
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Input label="Full Name" placeholder="John Doe" required />`}
           language="tsx"
@@ -136,7 +130,6 @@ export default function InputPage() {
             />
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Input label="Organization" placeholder="Acme Inc." disabled />`}
           language="tsx"

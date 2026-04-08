@@ -177,7 +177,6 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold text-foreground">Start in seconds</h2>
           <p className="mt-2 text-muted-foreground">One command to set up. Another to add components.</p>
         </div>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`# Initialize sunday-ui in your project
 npx sunday-ui init

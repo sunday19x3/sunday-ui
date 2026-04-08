@@ -86,7 +86,6 @@ export default function ThemingPage() {
           Dark mode is controlled by setting <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded-md">data-theme=&quot;dark&quot;</code> on
           the <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded-md">&lt;html&gt;</code> element.
         </p>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`// Toggle dark mode
 document.documentElement.setAttribute("data-theme", "dark");
@@ -99,7 +98,6 @@ document.documentElement.removeAttribute("data-theme");`}
           The Tailwind <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded-md">dark:</code> variant
           is configured to match this attribute:
         </p>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`@custom-variant dark (&:is([data-theme="dark"] *));`}
           language="css"
@@ -114,7 +112,6 @@ document.documentElement.removeAttribute("data-theme");`}
         <p className="text-muted-foreground">
           Create a new theme by adding a CSS variable block with a custom <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded-md">data-theme</code> value:
         </p>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`[data-theme="ocean"] {
   --sui-primary: #0077b6;
@@ -127,7 +124,6 @@ document.documentElement.removeAttribute("data-theme");`}
 }`}
           language="css"
         />
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`document.documentElement.setAttribute("data-theme", "ocean");`}
           language="tsx"

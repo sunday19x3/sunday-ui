@@ -26,14 +26,12 @@ export default function BadgePage() {
       {/* Installation */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Installation</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock code={meta.install} language="bash" />
       </section>
 
       {/* Usage */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Usage</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`import { Badge } from "@/components/ui/badge"\n\n<Badge>Badge</Badge>`}
           language="tsx"
@@ -53,7 +51,6 @@ export default function BadgePage() {
             <Badge variant="warning">Warning</Badge>
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Badge variant="default">Default</Badge>
 <Badge variant="secondary">Secondary</Badge>

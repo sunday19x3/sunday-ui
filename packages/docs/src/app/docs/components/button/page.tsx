@@ -26,14 +26,12 @@ export default function ButtonPage() {
       {/* Installation */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Installation</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock code={meta.install} language="bash" />
       </section>
 
       {/* Usage */}
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold text-foreground">Usage</h2>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`import { Button } from "@/components/ui/button"\n\n<Button>Click me</Button>`}
           language="tsx"
@@ -53,7 +51,6 @@ export default function ButtonPage() {
             <Button variant="link">Link</Button>
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Button variant="default">Default</Button>
 <Button variant="secondary">Secondary</Button>
@@ -91,7 +88,6 @@ export default function ButtonPage() {
             </Button>
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Button size="sm">Small</Button>
 <Button size="md">Medium</Button>
@@ -112,7 +108,6 @@ export default function ButtonPage() {
             <Button loading variant="secondary">Loading</Button>
           </div>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Button loading>Saving...</Button>
 <Button loading variant="secondary">Loading</Button>`}
@@ -134,7 +129,6 @@ export default function ButtonPage() {
             </a>
           </Button>
         </ComponentPreview>
-        {/* @ts-expect-error Async Server Component */}
         <CodeBlock
           code={`<Button asChild>
   <a href="https://github.com" target="_blank" rel="noopener noreferrer">
