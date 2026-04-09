@@ -4,6 +4,8 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Slot } from "@/lib/slot";
+import { composeRefs } from "@/lib/compose-refs";
+import { useMagneticHover } from "@/hooks/use-magnetic-hover";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0",
@@ -40,6 +42,8 @@ interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   loading?: boolean;
+  /** Enable magnetic hover + glow animation. Defaults to true (disabled for "link" variant). */
+  magnetic?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -50,6 +54,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size,
       asChild = false,
       loading = false,
+      magnetic,
       disabled,
       children,
       ...props
@@ -58,14 +63,26 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Comp = asChild ? Slot : "button";
     const isDisabled = disabled || loading;
+    // Fix #5: use HTMLElement — asChild can render any element, not just <button>
+    const internalRef = React.useRef<HTMLElement>(null);
+
+    const isMagnetic = magnetic ?? variant !== "link";
+
+    useMagneticHover(internalRef, {
+      disabled: !isMagnetic || isDisabled,
+      glowColor:
+        variant === "ghost" || variant === "outline"
+          ? "rgba(255,110,0,0.10)"
+          : "rgba(255,255,255,0.15)",
+    });
 
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
+        ref={composeRefs(ref, internalRef)}
         disabled={isDisabled}
         aria-busy={loading || undefined}
-        aria-disabled={isDisabled || undefined}
+        {...(asChild ? { "aria-disabled": isDisabled || undefined } : {})}
         {...props}
       >
         {loading ? (

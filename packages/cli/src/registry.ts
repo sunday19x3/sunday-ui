@@ -77,14 +77,21 @@ export const registry: RegistryItem[] = [
     files: ["hooks/use-typeahead.ts"],
     dependencies: [],
   },
+  {
+    name: "use-magnetic-hover",
+    type: "hook",
+    files: ["hooks/use-magnetic-hover.ts"],
+    dependencies: [],
+    npmDependencies: ["gsap"],
+  },
 
   // ---- UI Components ----
   {
     name: "button",
     type: "ui",
     files: ["ui/button.tsx"],
-    dependencies: ["utils", "slot"],
-    npmDependencies: ["class-variance-authority"],
+    dependencies: ["utils", "slot", "compose-refs", "use-magnetic-hover"],
+    npmDependencies: ["class-variance-authority", "gsap"],
   },
   {
     name: "badge",
